@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "web-app",
-      "script": "server/index.js",
+      "script": "server.js",
       "cwd": "/deploy/demo/web-app/current",
       "error_file": "/trendbot/logs/web.err.log",
       "out_file": "/trendbot/logs/web.out.log",
