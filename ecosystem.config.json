@@ -3,7 +3,7 @@
     {
       "name": "web-app",
       "script": "server.js",
-      "cwd": "/deploy/demo/web-app/current",
+      "cwd": "/trendbot",
       "error_file": "/trendbot/logs/web.err.log",
       "out_file": "/trendbot/logs/web.out.log",
       "watch": false,
