@@ -1,0 +1,36 @@
+{
+  "apps": [
+    {
+      "name": "web-app",
+      "script": "server/index.js",
+      "cwd": "/deploy/demo/web-app/current",
+      "error_file": "/trendbot/logs/web.err.log",
+      "out_file": "/trendbot/logs/web.out.log",
+      "watch": false,
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "root",
+      "host": [
+        "128.199.231.154"
+      ],
+      "ref": "origin/master",
+      "repo": "git@github.com:kienht58/trendbot.git",
+      "path": "/trendbot",
+      "post-setup": "npm install; npm build; pm2 start ecosystem.config.json --env production",
+      "post-deploy": "npm install; npm build; pm2 restart ecosystem.config.json --env production",
+      "ssh_options": [
+        "StrictHostKeyChecking=no",
+        "PasswordAuthentication=no"
+      ]
+    }
+  }
+}
